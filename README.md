@@ -14,8 +14,7 @@ Shift: B
 
 ![Lampiran Tampilan Tambah Mahasiswa](tambah-mahasiswa.png)
 
-Endpoint: POST /tambah.php
-
+Memanggil fungsi openModalTambah() untuk menampilkan halaman tambah mahasiswa. </br>
 Fungsi tambahMahasiswa() mengambil nilai input dari form dan mengirim data ke tambah.php menggunakan fungsi this.api.tambah(data, 'tambah.php').</br>
 Data mahasiswa diterima API. Jika nama dan jurusan tidak kosong, data disimpan ke tabel mahasiswa</br> 
 Kemudian data mahasiswa akan direfresh dan modal tambah mahasiswa akan ditutup dengan fungsi this.modal.dismiss();.
@@ -24,10 +23,13 @@ Kemudian data mahasiswa akan direfresh dan modal tambah mahasiswa akan ditutup d
 
 ![Lampiran Tampilan Setelah Tambah](daftar-mahasiswa_new.png)
 
+Program menggunakan fungsi getMahasiswa() untuk memanggil API tampil.php dan menampilkan seluruh data mahasiswa yang ada di database dalam bentuk komponen card.
+
 ## Tampilan Edit Mahasiswa
 
 ![Lampiran Tampilan Edit](edit-mahasiswa.png)
 
+Memanggil fungsi openModalEdit() untuk menampilkan halaman edit mahasiswa. </br>
 Fungsi editMahasiswa() mengambil nilai input dari form dan mengirim data ke edit.php menggunakan fungsi this.api.edit(data, 'edit.php').</br>
 Data mahasiswa yang baru akan diterima API. Data yang baru akan disimpan ke tabel mahasiswa, kemudian data mahasiswa akan direfresh dan modal edit mahasiswa akan ditutup menggunakan fungsi this.modal.dismiss().
 
@@ -40,8 +42,8 @@ Data mahasiswa yang baru akan diterima API. Data yang baru akan disimpan ke tabe
 ![Lampiran Tampilan Konfirmasi Hapus](konfirmasi-hapus.png)
 
 fungsi hapusMahasiswa(id: any) menerima parameter ID mahasiswa yang ingin dihapus. </br>
-Fungsi this.api.hapus(id, 'hapus.php?id=') digunakan untuk mengirim permintaan hapus ke endpoint API hapus.php.
-
+Fungsi this.api.hapus(id, 'hapus.php?id=') digunakan untuk mengirim permintaan hapus ke endpoint API hapus.php. </br>
+Kemudian memanggil fungsi getMahasiswa() untuk memperbarui tampilan daftar siswa.
 
 ## Tampilan Daftar Mahasiswa Setelah Data Dihapus
 
